@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/moonbackground">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Normalize being a big ol' sleepyhead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/crescent"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/moonlogo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/wavetext"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/wavetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="White noise"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/whiteslider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wavetext"
+        android:valueFrom="0.0"
+        android:valueTo="1.0"
+        android:value="0.50"
+        app:labelBehavior="gone"
+        app:trackColorActive="@color/white"
+        app:trackColorInactive="@color/moonyellow"
+        app:thumbColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/browntext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/whiteslider"
+        android:textColor="@color/white"
+        android:text="Brown noise"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/brownslider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:valueFrom="0.0"
+        android:valueTo="1.0"
+        android:value="0.50"
+        app:layout_constraintTop_toBottomOf="@id/browntext"
+        app:labelBehavior="gone"
+        app:trackColorActive="@color/white"
+        app:trackColorInactive="@color/moonyellow"
+        app:thumbColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/pinktext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brownslider"
+        android:text="Pink noise"/>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/pinkslider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:valueFrom="0.0"
+        android:valueTo="1.0"
+        android:value="0.50"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinktext"
+        app:labelBehavior="gone"
+        app:trackColorActive="@color/white"
+        app:trackColorInactive="@color/moonyellow"
+        app:thumbColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/playLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintRight_toLeftOf="@id/pause"
+            android:src="@drawable/play"/>
+
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/pause"
+            app:layout_constraintLeft_toRightOf="@id/play"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
