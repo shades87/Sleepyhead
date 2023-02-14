@@ -15,6 +15,8 @@ Any app over 150 MB needs to use the asset folder or google play store will reje
  */
 
 class WhiteNoiseService : Service(){
+
+    //Media players for each of the sounds
     private lateinit var mediaPlayer:MediaPlayer
     private lateinit var pinkPlayer:MediaPlayer
     private lateinit var brownPlayer:MediaPlayer
@@ -23,6 +25,7 @@ class WhiteNoiseService : Service(){
     override fun onCreate() {
         super.onCreate()
 
+        //initialize the media players and make sure they loop
         mediaPlayer = MediaPlayer.create(applicationContext, R.raw.whitenoise)
         pinkPlayer = MediaPlayer.create(applicationContext, R.raw.pinknoise)
         brownPlayer = MediaPlayer.create(applicationContext, R.raw.brown)
@@ -31,6 +34,9 @@ class WhiteNoiseService : Service(){
         pinkPlayer.isLooping = true
         brownPlayer.isLooping = true
 
+        mediaPlayer.setVolume(0.3F,0.3F)
+        pinkPlayer.setVolume(0.4F,0.4F)
+        brownPlayer.setVolume(0.5F,0.5F)
 
     }
 
@@ -45,38 +51,45 @@ class WhiteNoiseService : Service(){
     Cannot have separate functions for each one, as it would be called by onStartCommand anyway
     As a result I do not want to add too much functionality as this function could easily
     balloon into something messy
+
+    Parse the action, which is effectively a keyword telling onStartCommand what to do
      */
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        if(intent?.action.equals("PLAY"))
+
+        if(intent?.action.equals("PLAY")) //play all MediaPlayers
         {
             mediaPlayer.start()
             pinkPlayer.start()
             brownPlayer.start()
         }
 
-        if(intent?.action.equals("PAUSE")) {
+        if(intent?.action.equals("PAUSE")) //pause all MediaPlayers
+        {
             mediaPlayer.pause()
             pinkPlayer.pause()
             brownPlayer.pause()
         }
 
-        if(intent?.action.equals("PINKVOL")){
-            val vol = intent?.getFloatExtra("vol", .05F)
+        if(intent?.action.equals("PINKVOL")) //adjust volume of pink player
+        {
+            val vol = intent?.getFloatExtra("vol", .40F)
             if (vol != null) {
                 pinkPlayer.setVolume(vol, vol)
             }
         }
 
-        if(intent?.action.equals("BROWNVOL")){
-            val vol = intent?.getFloatExtra("vol", .05F)
+        if(intent?.action.equals("BROWNVOL")) //adjust volume of brown noise player
+        {
+            val vol = intent?.getFloatExtra("vol", .50F)
             if(vol != null) {
                 brownPlayer.setVolume(vol,vol)
             }
         }
 
-        if(intent?.action.equals("WHITEVOL")){
-            val vol = intent?.getFloatExtra("vol", .05F)
+        if(intent?.action.equals("WHITEVOL")) //adjust volume of white noise player
+        {
+            val vol = intent?.getFloatExtra("vol", .30F)
             if(vol != null){
                 mediaPlayer.setVolume(vol,vol)
             }
