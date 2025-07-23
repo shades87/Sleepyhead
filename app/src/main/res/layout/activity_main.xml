@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         android:textSize="45sp"
         android:textColor="@color/moonwhite"
         android:textAlignment="center"/>
@@ -123,7 +123,7 @@
 
     <ImageView
         android:id="@+id/play"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
