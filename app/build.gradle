@@ -11,8 +11,8 @@ android {
         applicationId "edu.curtin.sleepyhead"
         minSdk 21
         targetSdk 36
-        versionCode 7
-        versionName "7.1"
+        versionCode 8
+        versionName "7.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -26,6 +26,7 @@ android {
         release {
 
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

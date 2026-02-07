@@ -19,3 +19,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Keep all services
+-keep class edu.curtin.sleepyhead.**Service { *; }
+
+# Keep all MediaPlayer calls (optional, usually safe)
+-keep class android.media.MediaPlayer { *; }
+
+# Keep entry points for Activities/Services
+-keep class * extends android.app.Service
+-keep class * extends android.app.Activity
