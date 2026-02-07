@@ -45,6 +45,7 @@ class WhiteNoiseService : Service(){
     }
 
 
+
     /*
     Function to do anything when the service is called
     Play, pause, change volume
@@ -55,6 +56,33 @@ class WhiteNoiseService : Service(){
     Parse the action, which is effectively a keyword telling onStartCommand what to do
      */
 
+
+    override fun onDestroy(){
+        mediaPlayer.stop()
+        mediaPlayer.release()
+        pinkPlayer.stop()
+        pinkPlayer.release()
+        brownPlayer.stop()
+        brownPlayer.release()
+        stopSelf()
+        super.onDestroy()
+    }
+
+
+
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        // Stop the media and the service when app is swiped away
+        mediaPlayer.stop()
+        mediaPlayer.release()
+        pinkPlayer.stop()
+        pinkPlayer.release()
+        brownPlayer.stop()
+        brownPlayer.release()
+        stopSelf()
+       super.onTaskRemoved(rootIntent)
+    }
+
+
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
         if(intent?.action.equals("PLAY")) //play all MediaPlayers
@@ -62,6 +90,8 @@ class WhiteNoiseService : Service(){
             mediaPlayer.start()
             pinkPlayer.start()
             brownPlayer.start()
+
+
         }
 
         if(intent?.action.equals("PAUSE")) //pause all MediaPlayers
