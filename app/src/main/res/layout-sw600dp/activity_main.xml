@@ -11,14 +11,15 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Normalize being a big ol' sleepyhead"
-        android:layout_marginTop="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="70sp"
+        android:layout_marginTop="144dp"
+        android:text="@string/normalize_being_a_big_ol_sleepyhead"
+        android:textAlignment="center"
         android:textColor="@color/moonwhite"
-        android:textAlignment="center"/>
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/crescent"
@@ -30,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintBottom_toTopOf="@id/linear"
         android:layout_marginBottom="15dp"
-        android:contentDescription="Logo of a moon with white noise coming out" />
+        android:contentDescription="@string/logo_of_a_moon_with_white_noise_coming_out" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +49,7 @@
             android:id="@+id/wavetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="White noise"
+            android:text="@string/white_noise"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/moonwhite"
@@ -76,7 +77,7 @@
             android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@id/whiteslider"
             android:textColor="@color/moonwhite"
-            android:text="Brown noise"/>
+            android:text="@string/brown_noise"/>
 
         <com.google.android.material.slider.Slider
             android:id="@+id/brownslider"
@@ -100,7 +101,7 @@
             android:textColor="@color/moonwhite"
             android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@id/brownslider"
-            android:text="Pink noise"/>
+            android:text="@string/pink_noise"/>
 
         <com.google.android.material.slider.Slider
             android:id="@+id/pinkslider"
@@ -127,7 +128,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/play"
-        android:contentDescription="Play button" />
+        android:contentDescription="@string/play_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

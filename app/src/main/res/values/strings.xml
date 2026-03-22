@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sleepyhead</string>
+    <string name="normalize_being_a_big_ol_sleepyhead">Normalize being a big ol\' sleepyhead</string>
+    <string name="logo_of_a_moon_with_white_noise_coming_out">Logo of a moon with white noise coming out</string>
+    <string name="white_noise">White noise</string>
+    <string name="white_noise_slider_control">White noise slider control</string>
+    <string name="brown_noise">Brown noise</string>
+    <string name="brown_noise_slider_control">Brown noise slider control</string>
+    <string name="pink_noise">Pink noise</string>
+    <string name="pink_noise_slider_control">Pink noise slider control</string>
+    <string name="play_button">Play button</string>
 </resources>

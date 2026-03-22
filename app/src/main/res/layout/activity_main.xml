@@ -11,11 +11,11 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Normalize being a big ol' sleepyhead"
+        android:text="@string/normalize_being_a_big_ol_sleepyhead"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="46dp"
         android:textSize="45sp"
         android:textColor="@color/moonwhite"
         android:textAlignment="center"/>
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintBottom_toTopOf="@id/linear"
         android:layout_marginBottom="15dp"
-        android:contentDescription="Logo of a moon with white noise coming out" />
+        android:contentDescription="@string/logo_of_a_moon_with_white_noise_coming_out" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             android:id="@+id/wavetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="White noise"
+            android:text="@string/white_noise"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/moonwhite"
@@ -64,7 +64,7 @@
             android:valueFrom="0.0"
             android:valueTo="0.6"
             android:value="0.3"
-            android:contentDescription="White noise slider control"
+            android:contentDescription="@string/white_noise_slider_control"
             app:labelBehavior="gone"
             app:trackColorActive="@color/moonwhite"
             app:trackColorInactive="@color/moonyellow"
@@ -77,7 +77,7 @@
             android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@id/whiteslider"
             android:textColor="@color/moonwhite"
-            android:text="Brown noise"/>
+            android:text="@string/brown_noise"/>
 
         <com.google.android.material.slider.Slider
             android:id="@+id/brownslider"
@@ -88,7 +88,7 @@
             android:valueFrom="0.0"
             android:valueTo="0.8"
             android:value="0.4"
-            android:contentDescription="Brown noise slider control"
+            android:contentDescription="@string/brown_noise_slider_control"
             app:layout_constraintTop_toBottomOf="@id/browntext"
             app:labelBehavior="gone"
             app:trackColorActive="@color/moonwhite"
@@ -102,7 +102,7 @@
             android:textColor="@color/moonwhite"
             android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@id/brownslider"
-            android:text="Pink noise"/>
+            android:text="@string/pink_noise"/>
 
         <com.google.android.material.slider.Slider
             android:id="@+id/pinkslider"
@@ -111,7 +111,7 @@
             android:valueFrom="0.0"
             android:valueTo="1.0"
             android:value="0.5"
-            android:contentDescription="Pink noise slider control"
+            android:contentDescription="@string/pink_noise_slider_control"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pinktext"
@@ -130,7 +130,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@drawable/play"
-        android:contentDescription="Play button" />
+        android:contentDescription="@string/play_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
